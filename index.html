@@ -2,28 +2,111 @@
 
 <head>
     <link rel="stylesheet" href="bower_components/reveal-js/css/reveal.css">
-    <link rel="stylesheet" href="bower_components/reveal-js/css/theme/blood.css">
+    <link rel="stylesheet" href="bower_components/reveal-js/css/theme/night.css">
+
+    <title>Celebrate Polymer 3</title>
 </head>
 
 <body>
     <div class="reveal">
         <div class="slides">
             <section>
-                    <section>
-                        <h1>Title</h1>
-                    </section>
-                    <section>
-                        <h2>Intro</h2>
-                    </section>
+                <section>
+                    <h1>🎉Polymer 3🎉</h1>
+                    <h3>Frank Wijmans &amp; Willem Veelenturf</h3>
+                </section>
+                <section>
+                    <h2>Intro</h2>
+                </section>
             </section>
             <section>
                 <section>
                     <h2>Why?</h2>
                 </section>
             </section>
-            <section>
+            <section id="frank">
                 <section>
-                    <h2>What?</h2>
+                    <h2>Polymer 3 In Action</h2>
+                </section>
+                <section>
+                    <pre><code data-trim data-noescape>
+> yarn init
+                    </code></pre>
+                </section>
+                <section>
+                        <pre><code data-trim data-noescape>
+{
+    "name": "polymer3-preview",
+    "version": "1.0.0",
+    "description": "The first, great, hands-on P3 preview",
+    "main": "index.js",
+    "repository": {},
+    "author": "Frank Wijmans",
+    "license": "MIT",
+    "flat": true,
+    "dependencies": {
+        "@polymer/polymer": "next",
+        "@webcomponents/webcomponentsjs": "^1.0.13"
+    },
+    "resolutions": {
+        "@webcomponents/webcomponentsjs": "1.0.13"
+    }
+}
+                        </code></pre>
+                        TODO: Highlight flat true.
+                </section>
+                <section>
+                    <pre><code data-trim data-noescape>
+                            &lt;html>
+                            &lt;head>
+&lt;script type="module" src="src/my-app.js">&lt;/script>
+&lt;/head>
+
+&lt;body>
+&lt;my-app class="item">&lt;/my-app>
+&lt;/body>
+    &lt;/html>
+</code></pre>
+
+</section>
+<section>
+<pre><code data-trim data-noescape>
+
+import { Element as PolymerElement }
+    from '../node_modules/@polymer/polymer/polymer-element.js';
+
+export class MyApp extends PolymerElement {
+    ...
+}
+    
+customElements.define('my-app', MyApp);
+                    </code></pre>
+                </section>
+                <section>
+                    <pre><code data-trim data-noescape>
+// Define a string template instead of a `&lt;template>` element.
+static get template() {
+    return `
+    &lt;div style="color: white; font-size: 18px; font-family: trebuchet ms">Hello [[name]]&lt;/div>
+    &lt;div class="border-radius: 16px;">&lt;img src="polymer3.jpg">&lt;/div>`
+}
+
+constructor() {
+    super();
+    this.name = '3.0 preview';
+}
+
+// properties, observers, etc. are identical to 2.x
+static get properties() {
+    name: {
+        Type: String
+    }
+}
+                    </code></pre>
+                </section>
+                <section>
+                    LIT HTML IS KNOWN, SHOW ITS awesomness.
+                    https://github.com/PolymerLabs/lit-html
                 </section>
             </section>
             <section>
@@ -33,8 +116,8 @@
     </div>
     <script src="bower_components/reveal-js/js/reveal.js"></script>
     <script>
-        Reveal.initialize();
+        Reveal.initialize({});
     </script>
 </body>
 
-</html>s
+</html>
