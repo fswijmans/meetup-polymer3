@@ -1,0 +1,21 @@
+{
+  "name": "meetup-polymer3",
+  "homepage": "https://github.com/fswijmans/meetup-polymer3",
+  "authors": [
+    "Frank Wijmans <fswijmans@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "reveal-js": "^2.6.2"
+  }
+}
