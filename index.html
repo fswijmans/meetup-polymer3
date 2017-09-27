@@ -1,123 +1,332 @@
+<!doctype html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="bower_components/reveal-js/css/reveal.css">
-    <link rel="stylesheet" href="bower_components/reveal-js/css/theme/night.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Celebrate Polymer 3</title>
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<style>
+		.introimg {
+			border-radius: 50%;
+			height: 300px;
+			margin: 0 20px!important;
+		}
+	</style>
 </head>
 
 <body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <section>
-                    <h1>🎉Polymer 3🎉</h1>
-                    <h3>Frank Wijmans &amp; Willem Veelenturf</h3>
-                </section>
-                <section>
-                    <h2>Intro</h2>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <h2>Why?</h2>
-                </section>
-            </section>
-            <section id="frank">
-                <section>
-                    <h2>Polymer 3 In Action</h2>
-                </section>
-                <section>
-                    <pre><code data-trim data-noescape>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<h1>🎉Polymer 3🎉</h1>
+					<h3>Frank Wijmans &amp; Willem Veelenturf</h3>
+				</section>
+				<section>
+					<h2>Intro</h2>
+					<div>
+						<img src="img/willem.jpeg" class="introimg">
+						<img src="img/frank.jpeg" class="introimg">
+					</div>
+				</section>
+
+				<section>
+					<img src="img/summit.jpg" />
+					<aside class="notes">
+						Share some highlight about polymer 3.0 announced during the polymer summit
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/flock.png" />
+					<aside class="notes">
+						Last meetup we handed out three tickets for the penthouse in Copenhagen.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/going_to_the_confernce.jpg" />
+					<aside class="notes">
+						Great time during but also after the conference
+					</aside>
+				</section>
+			</section>
+
+
+
+
+				<!-- WILLEM START -->
+
+				<section>
+
+					<section>
+						<h1>Why ?</h1>
+						<aside class="notes">
+							Why polymer 3.0
+						</aside>
+					</section>
+
+					<section>
+						<h3>Mission of the Polymer team</h3>
+						<p>#usetheplatform</p>
+						<aside class="notes">
+							The mission of the team is te get native support for components in the browser - Mission started 2012 - They want to build
+							an eco system - The big challenge loader and package manager for the web (did not exist) - ES modules did not exist
+							- Webpack browsify not exist
+						</aside>
+					</section>
+
+					<section>
+						<h2>Three big changes</h2>
+						<ul>
+							<li>Bower to npm</li>
+							<li>Html imports to Javascript ES modules</li>
+							<li>Polymer 3.0</li>
+						</ul>
+						<aside class="notes">
+							During the conference three big changes where announced
+						</aside>
+					</section>
+
+					<section>
+						<h2>Moving from bower to npm</h2>
+						<aside class="notes">
+							- The whole community is moving to NPM (Nasa) - Npm did not have the flat dependency structure - bower was the best package
+							manager at that time
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/bower_check_box.png" />
+						<aside class="notes">
+							Bower was the best package manager at that time Polymer needed to resolve a flat depende
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/npm_check_box.png" />
+						<aside class="notes">
+							Bower was the best package manager at that time Polymer needed to resolve a flat depende
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/yarn_check_boxes.png" />
+						<aside class="notes">
+							Bower was the best package manager at that time Polymer needed to resolve a flat depende
+						</aside>
+					</section>
+
+					<section>
+						<h2>Html imports to Javascript ES module</h2>
+					</section>
+
+					<section>
+						<img src="img/loader_for_polyem.png" />
+					</section>
+
+					<section>
+						<img src="img/html_imports.png" />
+					</section>
+
+					<section>
+						<img src="img/js_modules.png" />
+					</section>
+
+				</section>
+			</section>
+
+			<!-- FROM WILLEM TO FRANK -->
+
+
+			<section id="frank">
+				<section>
+					<h2>Polymer 3 In Action</h2>
+
+					<aside class="notes">
+
+						By now we know the why and how of Polymer 3. In short, using better tools and sticking to web standards. Let's take a closer
+						look at the syntax of a Polymer 3 component. We'll be making a simple component from scratch, closely following the
+						hands-on that Google provides.
+
+					</aside>
+				</section>
+				<section>
+					<h2>From scratch</h2>
+					<pre><code class="bash" data-trim data-noescape>
 > yarn init
-                    </code></pre>
-                </section>
-                <section>
-                        <pre><code data-trim data-noescape>
+				</code></pre>
+
+
+					<aside class="notes">
+						Given that you have globally installed Yarn using NPM, you can do a yarn init. This will give you a tool to setup your program,
+						similar to the polymer-cli. Sadly, the generators of the polymer-cli are not yet updated with a polymer 3 version.
+						That's why we'll do this by hand. Running this gives you a package.json
+					</aside>
+				</section>
+				<section>
+					<h2>package.json</h2>
+					<pre><code class="js" data-trim data-noescape>
 {
-    "name": "polymer3-preview",
-    "version": "1.0.0",
-    "description": "The first, great, hands-on P3 preview",
-    "main": "index.js",
-    "repository": {},
-    "author": "Frank Wijmans",
-    "license": "MIT",
-    "flat": true,
-    "dependencies": {
-        "@polymer/polymer": "next",
-        "@webcomponents/webcomponentsjs": "^1.0.13"
-    },
-    "resolutions": {
-        "@webcomponents/webcomponentsjs": "1.0.13"
-    }
+  "name": "polymer3-preview",
+  "version": "1.0.0",
+  "flat": true,
+  "dependencies": {
+	"@polymer/polymer": "next",
+	"@webcomponents/webcomponentsjs": "^1.0.13"
+  }
 }
-                        </code></pre>
-                        TODO: Highlight flat true.
-                </section>
-                <section>
-                    <pre><code data-trim data-noescape>
-                            &lt;html>
-                            &lt;head>
-&lt;script type="module" src="src/my-app.js">&lt;/script>
-&lt;/head>
+					</code></pre>
 
-&lt;body>
-&lt;my-app class="item">&lt;/my-app>
-&lt;/body>
-    &lt;/html>
+					<aside class="notes">
+						This, ofcourse, is the package.json created. There is not so much spectecular going on. Just mind flat, which is necessary.
+						And imagine that all your dependencies, whether they used to be NPM or Bower, are now in this file.
+					</aside>
+				</section>
+				<section>
+					<h2>index.html</h2>
+					<pre><code class="html" data-trim data-noescape>
+&lt;html>
+  &lt;head>
+    &lt;script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js">&lt;/script>
+    &lt;script type="module" src="src/my-app.js">&lt;/script>
+  &lt;/head>
+
+  &lt;body>
+    &lt;my-app>&lt;/my-app>
+  &lt;/body>
+&lt;/html>
 </code></pre>
+					<aside class="notes">
+						Next, lets create our application. The index.html, is the file that glues all together. We load the webcomponentsjs polyfill.
+						We add the module for our app to be. And we'll add the tag for our app. Note that we don't mention polymer here.
+					</aside>
+				</section>
+				<section>
 
-</section>
-<section>
-<pre><code data-trim data-noescape>
+					<h2>my-app.js</h2>
+					<pre><code class="js" data-trim data-noescape>
 
 import { Element as PolymerElement }
-    from '../node_modules/@polymer/polymer/polymer-element.js';
+  from '../node_modules/@polymer/polymer/polymer-element.js';
 
 export class MyApp extends PolymerElement {
-    ...
-}
-    
-customElements.define('my-app', MyApp);
-                    </code></pre>
-                </section>
-                <section>
-                    <pre><code data-trim data-noescape>
-// Define a string template instead of a `&lt;template>` element.
-static get template() {
-    return `
-    &lt;div style="color: white; font-size: 18px; font-family: trebuchet ms">Hello [[name]]&lt;/div>
-    &lt;div class="border-radius: 16px;">&lt;img src="polymer3.jpg">&lt;/div>`
+  ...
 }
 
-constructor() {
+customElements.define('my-app', MyApp);
+				</code></pre>
+					<aside class="notes">
+						Then, moving to the my-app.js, the ES Module. We import polymer from the node_modules, using the standard syntax for ES Modules.
+						Then, as you know of Polymer 2, we create a class. This is exposed by the export syntax.
+					</aside>
+				</section>
+				<section>
+
+					<h2>my-app.js (2)</h2>
+					<pre><code class="js" data-trim data-noescape>
+export class MyApp extends PolymerElement {
+	
+  static get template() {
+		return `
+			&lt;style>
+			  ...
+			&lt;/style>
+      &lt;h1>Hello [[name]]&lt;/h1>
+      &lt;img src="polymer3.jpg">`;
+  }
+  ...
+
+</code></pre>
+					<aside class="notes">
+						What is interesting, is ofcourse the HTML and CSS inside the module. The template is now implemented as a get method. This
+						is ofcourse a simple example. I am a bit worried about having big css and html code in your template. Not a lot is
+						said about CSS, though. For example on the topic of global custom styles? I knew that Vaadin is doing a lot with templating
+						sites with CSS. I asked them, but they don't have a clear answer on this topic. But this is it: The main change to
+						our components.
+					</aside>
+				</section>
+
+				<section>
+					<h2>my-app.js (3)</h2>
+					<pre><code class="js" data-trim data-noescape>
+  constructor() {
     super();
     this.name = '3.0 preview';
-}
+  }
 
-// properties, observers, etc. are identical to 2.x
-static get properties() {
+  static get properties() {
     name: {
-        Type: String
+      type: String
     }
+  }
 }
-                    </code></pre>
-                </section>
-                <section>
-                    LIT HTML IS KNOWN, SHOW ITS awesomness.
-                    https://github.com/PolymerLabs/lit-html
-                </section>
-            </section>
-            <section>
-                <h2>Doei</h2>
-            </section>
-        </div>
-    </div>
-    <script src="bower_components/reveal-js/js/reveal.js"></script>
-    <script>
-        Reveal.initialize({});
-    </script>
+</code></pre>
+					<aside class="notes">
+						So for the rest of the component, e.g. the constructor and properties stay the same. Same counts for listeners, and the callback
+						functions.
+					</aside>
+				</section>
+				<section id="site" data-background-iframe="http://localhost:8081/components/polymer3-preview/" data-background-interactive>
+					<aside class="notes">
+						In this slide you can see an polymer 3 component, like the one we just created. This has a little animation going to show
+						you were the polymer logo originates from.
+					</aside>
+				</section>
+			</section>
+
+			<!-- END -->
+
+			<section>
+				<section>
+					<h2>Find us at the bar!</h2>
+					<img src="img/what-do-you-think.jpeg">
+					<aside class="notes">
+						So that's it. Now you know the Why, How and What changes for us, when we move to Polymer 3. There is one more thing; there
+						will be a tool to modularize your polymer 2 components automatically.
+					</aside>
+				</section>
+				<section>
+					<h2>Thanks</h2>
+				</section>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
 </body>
 
 </html>
